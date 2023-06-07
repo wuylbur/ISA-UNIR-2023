@@ -8,7 +8,8 @@ public:
         testDivision();
         testDivisionPorCero();
         testRaizCuadrada();
-         //si los test se pasan correctamente, lo muestro
+        testRaizCuadradaDeNumeroNegativo();
+        //si los test se pasan correctamente, lo muestro
         std::cout << "Todos los tests pasaron correctamente." << std::endl;
     }
 
@@ -51,6 +52,15 @@ private:
         Calculadora calc;
         double result = calc.raiz_cuadrada(16.0);
         assert(fabs(result - 4.0) < 0.001);
+    }
+    //test de la reaiz cuadrada de un negativo
+    void testRaizCuadradaDeNumeroNegativo() {
+        Calculadora calc;
+        try {
+            calc.raiz_cuadrada(-16.0);
+        } catch (const std::runtime_error& e) {
+            assert(std::string(e.what()) == "Error: número negativo");
+        }
     }
 };
 
