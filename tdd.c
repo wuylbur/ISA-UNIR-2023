@@ -5,7 +5,8 @@ public:
         testSuma();
         testResta();
         testMultiplicacion();
-        //si los test se pasan correctamente, lo muestro
+        testDivision();
+       //si los test se pasan correctamente, lo muestro
         std::cout << "Todos los tests pasaron correctamente." << std::endl;
     }
 
@@ -28,8 +29,14 @@ private:
         double result = calc.multiplicacion(4.2, 3.1);
         assert(fabs(result - 13.02) < 0.001);
     }
-  
-};
+    //test de la division
+    void testDivision() {
+        Calculadora calc;
+        double result = calc.division(10.0, 2.5);
+        assert(fabs(result - 4.0) < 0.001);
+    }
+    
+    };
 
 int main() {
     TestCalculadora testCalc;
