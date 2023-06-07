@@ -7,7 +7,8 @@ public:
         testMultiplicacion();
         testDivision();
         testDivisionPorCero();
-        //si los test se pasan correctamente, lo muestro
+        testRaizCuadrada();
+         //si los test se pasan correctamente, lo muestro
         std::cout << "Todos los tests pasaron correctamente." << std::endl;
     }
 
@@ -45,7 +46,12 @@ private:
             assert(std::string(e.what()) == "Error: división por cero");
         }
     }
-    
+    //test de la raiz cuadrada
+    void testRaizCuadrada() {
+        Calculadora calc;
+        double result = calc.raiz_cuadrada(16.0);
+        assert(fabs(result - 4.0) < 0.001);
+    }
 };
 
 int main() {
