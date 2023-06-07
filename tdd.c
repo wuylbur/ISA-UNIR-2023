@@ -6,7 +6,8 @@ public:
         testResta();
         testMultiplicacion();
         testDivision();
-       //si los test se pasan correctamente, lo muestro
+        testDivisionPorCero();
+        //si los test se pasan correctamente, lo muestro
         std::cout << "Todos los tests pasaron correctamente." << std::endl;
     }
 
@@ -35,8 +36,17 @@ private:
         double result = calc.division(10.0, 2.5);
         assert(fabs(result - 4.0) < 0.001);
     }
+    //tst de la dicison entre cero
+    void testDivisionPorCero() {
+        Calculadora calc;
+        try {
+            calc.division(10.0, 0);
+        } catch (const std::runtime_error& e) {
+            assert(std::string(e.what()) == "Error: división por cero");
+        }
+    }
     
-    };
+};
 
 int main() {
     TestCalculadora testCalc;
