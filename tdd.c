@@ -4,7 +4,7 @@ public:
     void runTests() {
         testSuma();
         testResta();
-        
+        testMultiplicacion();
         //si los test se pasan correctamente, lo muestro
         std::cout << "Todos los tests pasaron correctamente." << std::endl;
     }
@@ -22,7 +22,13 @@ private:
         double result = calc.resta(5.5, 2.3);
         assert(fabs(result - 3.2) < 0.001);
     }
-    
+    //test de la multiplicación
+    void testMultiplicacion() {
+        Calculadora calc;
+        double result = calc.multiplicacion(4.2, 3.1);
+        assert(fabs(result - 13.02) < 0.001);
+    }
+  
 };
 
 int main() {
