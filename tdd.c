@@ -3,6 +3,7 @@ class TestCalculadora {
 public:
     void runTests() {
         testSuma();
+        testResta();
         
         //si los test se pasan correctamente, lo muestro
         std::cout << "Todos los tests pasaron correctamente." << std::endl;
@@ -15,8 +16,13 @@ private:
         double result = calc.suma(2.5, 3.7);
         assert(fabs(result - 6.2) < 0.001);
     }
+    //test de la resta
+    void testResta() {
+        Calculadora calc;
+        double result = calc.resta(5.5, 2.3);
+        assert(fabs(result - 3.2) < 0.001);
+    }
     
-  
 };
 
 int main() {
